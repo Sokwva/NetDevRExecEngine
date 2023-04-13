@@ -1,0 +1,13 @@
+test.xlsx
+logs
+资产清单/*.xlsx
+venv
+tests
+__pycache__
+.idea/
+devices.xlsx
+exec.log
+example.xlsx
+.vscode
+script
+*.log
