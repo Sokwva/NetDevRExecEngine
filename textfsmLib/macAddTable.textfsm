@@ -1,0 +1,16 @@
+Value macAddr (\S+)
+Value vlanId (\S+)
+Value macInPort (\S+)
+Value type (\S+)
+Value aging (\S+)
+
+Start
+ ^MAC Address\s+VLAN ID\s+State\s+Port/Nick\Same\s+Aging -> RecIt
+ ^MAC ADDR\s+VLAN ID\s+STATE\s+PORT INDEX\s+AGING TIME\S+ -> OldRecIt
+
+RecIt
+ ^${macAddr}\s+${vlanId}\s+${type}\s+${macInPort}\s+${aging} -> Record
+
+OldRecIt
+ ^${macAddr}\s+${vlanId}\s+${type}\s+${macInPort}\s+${aging} -> Record
+

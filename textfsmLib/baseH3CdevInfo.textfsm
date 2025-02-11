@@ -1,0 +1,7 @@
+Value Required version (\S+) 
+Value versionRelease (\S+)
+Value devType (\S+)
+
+Start
+ ^H3C Comware Software, Version ${version}, Release ${versionRelease} -> Record
+ ^H3C ${devType} uptime is -> Record

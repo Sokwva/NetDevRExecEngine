@@ -1,0 +1,16 @@
+Value ip (\S+)
+Value mac (\S+)
+Value vlan (\S+)
+Value interface (\S+)
+Value aging (\S+)
+Value type (\S+)
+
+Start
+ ^IP address\s+MAC address\s+VLAN/VSI\s+Interface\s+Aging Type -> InterfaceInfo
+ ^IP address\s+MAC address\s+VLAN/VSI\s+Interface/Link ID\s+Aging Type -> InterfaceInfo
+ ^IP address\s+MAC address\s+VLAN/VSI name\s+Interface\s+Aging Type -> InterfaceInfo
+ ^IP address\s+MAC address\s+VLAN\s+Interface\s+Aging Type -> InterfaceInfo
+
+InterfaceInfo
+ ^${ip}\s+${mac}\s+${vlan}\s+${interface}\s+${aging}\s+${type} -> Record
+ 

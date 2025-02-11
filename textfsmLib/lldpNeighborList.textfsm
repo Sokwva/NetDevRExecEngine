@@ -1,0 +1,14 @@
+Value LocalIntf (\S+)
+Value RemoteChassisId (\S+)
+Value RemotePortName (\S+)
+Value RemoteSysName (\S+)
+
+Start
+ ^Local Interface\s+Chassis ID\s+Port ID\s+System Name -> ListItem
+ ^System Name\s+Local Interface\s+Chassis ID\s+Port ID -> OldListItem
+
+ListItem
+ ^${LocalIntf}\s+${RemoteChassisId}\s+${RemotePortName}\s+${RemoteSysName} -> Record
+
+OldListItem
+ ^${RemoteSysName}\s+${LocalIntf}\s+${RemoteChassisId}\s+${RemotePortName} -> Record

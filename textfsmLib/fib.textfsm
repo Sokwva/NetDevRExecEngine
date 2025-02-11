@@ -1,0 +1,11 @@
+Value dst (\S+)
+Value nexthop (\S+)
+Value flag (\S+)
+Value outVlan (\S+)
+
+Start
+ ^Destination/Mask   Nexthop         Flag     OutInterface/Token       Label -> InterfaceInfo
+
+InterfaceInfo
+ ^${dst}\s+${nexthop}\s+${flag}\s+${outVlan}\s+\S+ -> Record
+ 

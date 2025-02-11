@@ -1,0 +1,15 @@
+Value interfaceName (\S+)
+Value status (\S+)
+Value speed (\S+)
+Value duplex (\S+)
+Value type (\S+)
+Value pvid (\S+)
+Value description (\S+)
+
+Start
+ ^Interface            Link Speed   Duplex Type PVID Description                 -> InterfaceInfo
+
+InterfaceInfo
+ ^${interfaceName}\s+${status}\s+${speed}\s+${duplex}\s+${type}\s+${pvid}\s+${description} -> Record
+ ^${interfaceName}\s+${status}\s+${speed}\s+${duplex}\s+${type}\s+${pvid}\s+ -> Record
+ 

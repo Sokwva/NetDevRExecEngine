@@ -1,0 +1,6 @@
+Value SysName (\S+)
+Value SerialNum (\S+)
+
+Start
+ ^\s+System name\s+:\s+${SysName} -> Record
+ ^\s+SerialNum\s+:\s+${SerialNum} -> Record

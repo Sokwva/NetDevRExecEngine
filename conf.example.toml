@@ -1,0 +1,17 @@
+[server]
+port = 8089
+
+[rabbitmq]
+addr = "192.168.1.23"
+port = "3000"
+user = "test"
+pass = "123"
+vhost = ""
+
+[redis]
+addr = "192.168.1.23"
+port = "3001"
+pass = "redispass"
+
+[taskManager]
+name = "none"

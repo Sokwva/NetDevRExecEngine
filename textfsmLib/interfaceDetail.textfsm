@@ -1,0 +1,28 @@
+Value status (\S+)
+Value lineStatus (\S+)
+Value portMacAdd (\S+)
+Value mediaType (.+)
+Value speed (\S+)
+Value duplex (\S+)
+Value type (\S+)
+Value pvid (\S+)
+Value description (\S+)
+Value LastPhyUpTime (.+)
+Value LastPhyDownTime (.+)
+Value PeakInputRate (.+)
+Value PeakInputRateDate (.+)
+Value PeakOutputRate (.+)
+Value PeakOutputRateDate (.+)
+
+Start
+ ^Current state: ${status}
+ ^Line protocol state: ${lineStatus}
+ ^IP packet frame type: Ethernet II, hardware address: ${portMacAdd}
+ ^Media type is ${mediaType}
+ ^Last time when physical state changed to up:${LastPhyUpTime}
+ ^Last time when physical state changed to down:${LastPhyDownTime}
+ ^PVID: ${pvid}
+ ^Port link-type: ${type}
+ ^ Peak input rate: ${PeakInputRate} bytes/sec, at ${PeakInputRateDate}
+ ^ Peak output rate: ${PeakOutputRate} bytes/sec, at ${PeakOutputRateDate}
+ ^$$ -> Record
